@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
-sign_trans.py
-Sign-language translator with kNN classifier.
-Supports Raspberry Pi Camera Module 3 via libcamera (Picamera2).
-
-Modes:
- - collect: capture labeled examples
- - train:   train kNN model
- - infer:   live translation
-
-Key accuracy fix:
- - MediaPipe "no hand detected" now returns None (NOT zeros)
- - collect: skips frames with no hand detected (prevents label contamination)
- - infer: shows NULL when no hand detected (optional label)
-
-Other features kept:
- - --pi-camera (Picamera2) and --cam (USB index)
- - --swap-rb to fix blue-tint PiCamera preview
- - append prompt: "File exists. Append to it? [Y/n]:"
-"""
 
 import argparse
 import time
